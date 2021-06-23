@@ -88,7 +88,7 @@ const codeSnippets = [
         category: "Frontend",
         subCategory: "Javascript",
         content: [
-         s + "`The result is ${variable + 10} `" + ss + "- Backticks are better concatonation",
+         c + "`The result is ${variable + 10} `" + cc + "- Backticks are better concatonation",
         `${c}function(age=23, date = 'november', height)${cc} - default params. can also accept funcitons`,
         `${c}&&${cc} 'and' logical operator 1> 0 && -1 > 0 = true`,
         `${c}||${cc} 'or' logical operator 1> 0 || 0 > 0 = true`,
