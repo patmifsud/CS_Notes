@@ -1,0 +1,122 @@
+/* setup */
+* {
+    margin: 0;
+    font-size: 16pt;
+    outline: none;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, helvetica, arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color:rgba(0, 0, 0, 0.8);
+}
+  
+/* Fix for swipe to go back/forward */
+  html, body {
+    overscroll-behavior-x: none;
+}
+
+/* structure */
+
+#container{
+    max-width:1200pt;
+    margin:0 auto;
+    padding: 130pt 0 20pt 0;
+}
+
+section div{
+    border-top: #eeeeee 1pt solid;
+    padding: 30pt;
+    min-width: 300pt;
+    margin:20pt 0;
+}
+
+section#posts div{
+    min-width: 450pt;
+}
+
+section{
+    display: flex;
+    margin-bottom:20pt;
+    overflow: scroll;
+}
+
+#menu{
+    padding: 10pt 0;
+    border-bottom: #eeeeee solid 1pt;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 30;
+}
+
+#menu div{
+    max-width:1200pt;
+    margin:0 auto;
+    padding: 20pt 0 20pt 30pt;
+}
+
+footer{
+    width: 100%;
+    border-top: 1pt solid #eeeeee;
+    padding: 30pt 0 50pt 0;
+}
+
+.row>h3{
+    margin-left:30pt;
+    display: inline;
+}
+
+h2{
+    margin-bottom: 10pt;
+}
+
+h4{
+    margin-bottom: 20pt;
+    opacity: 0.5;
+    font-weight: 500;
+}
+
+span.highlight{
+    background:rgba(255, 255, 0, 0.154);
+    font-weight:500;
+    color:rgb(0, 0, 0);
+}
+
+
+span.code{
+    font-family: monospace;
+}
+
+#chevron {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;
+    height: 10pt;
+    width: 30pt;
+    display: inline-block;
+  }
+
+#chevron:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51%;
+    background: red;
+    transform: skew(0deg, 28deg);
+  }
+
+#chevron:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: red;
+    transform: skew(0deg, -28deg);
+}
