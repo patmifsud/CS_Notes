@@ -12,7 +12,7 @@ const posts = [
         subCategory: "Blog",
         content: [`${h}A statement${hh} is any line that ends (or could end) in a semi colon. A funciton can also be a statement. It's kind of like sentences.`,
             `${h}An expression${hh} is any number, string, var, equasion etc `,
-            `${h}An argument${hh} is this guy function(${h}argument${hh}); although it's technically a parameter before getting something sent through to it. `,],
+            `${h}An argument${hh} is this guy ${c}function(argument);${cc} although it's technically a parameter before getting something sent through to it. `,],
     }
 ]
 
@@ -77,6 +77,9 @@ const codeSnippets = [
         category: "Backend",
         subCategory: "Terminal",
         content: [
+            `${c} git add${cc} - add docs to the git`,
+            `${c} git commit${cc} - create a version of your work`,
+            `${c} git remote -v${cc} - get the gihub url`,
             `${c} git pull upstream main ${cc} - pull changes from the main section to your local. When you push it will arrive in your fork.`,
             `${c} git push origin main ${cc} - push your changes to your fork`,
             `${c} git push origin main ${cc} - push your changes to your fork`,
@@ -92,6 +95,20 @@ const codeSnippets = [
         `${c}function(age=23, date = 'november', height)${cc} - default params. can also accept funcitons`,
         `${c}&&${cc} 'and' logical operator 1> 0 && -1 > 0 = true`,
         `${c}||${cc} 'or' logical operator 1> 0 || 0 > 0 = true`,
-        `${c}|${cc} 'not' logical operator 1 + 1 | 1 + 0 = true` ]
+        `${c}|${cc} 'not' logical operator 1 + 1 | 1 + 0 = true`,
+        `${c}(backslash)n ${cc} new line character`,
+        `${c}console.table()${cc} create a cool looking table to display an object etc`,
+        `${c}for (let key in objectName) return objectName[key];${cc} - this will return every value in an obj with key/value setup. 'in' means 'for every occurence of 'key' in 'object'`,
+        `${c}object.varWithKey${cc} doesn't work, it only works with strings. Use ${c}object[varWithKey]${cc} instead.`,
+        `${c}arguments${cc} lets you create a function with (), but take in any # or type of argument/ parametter.`,
+     ]
     },
+]
+
+const usefulLinks = [
+    airBnbJs = {
+        title: "Airbnb Guide to JS",
+        link: "https://github.com/airbnb/javascript",
+    }
+
 ]

@@ -19,7 +19,7 @@
 /* structure */
 
 body{
-    padding-top: 60pt;
+    padding-top: 70pt;
 }
 
 #menu{
@@ -37,6 +37,9 @@ body{
     margin-left:30pt;
 }   
 
+/* i wanted the horizontally scrolling sections to not cut off l/r
+on large screens, so i use margins on child elements instead of padding 
+around parent elements for spacing */
 @media only screen and (min-width: 1200pt) {
     .wrapper {
         margin-left: calc((100vw - 1200pt) / 2) ;
@@ -48,6 +51,16 @@ section{
     padding: 30pt 0 10pt 0;
     width:100%;
     overflow:hidden;
+    max-height:400pt;
+    transition: max-height 1s cubic-bezier(0.68, -0.2, 0.32, 1.2);
+}
+section:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.01);
+}
+
+section.open{
+    max-height:2000pt;
 }
 
 .scrollContainer{
@@ -57,11 +70,23 @@ section{
 
 
 .card{
-    margin-left:-10pt;
-    padding: 30pt 10pt 10pt 10pt;
-    min-width:300pt;
+    margin-left: -17pt;
+    margin-right: 30pt;
+    padding: 20pt 15pt 15pt 15pt;
+    min-width:290pt;
+    border:solid 2pt;
+    border-color: #00000000;
+    transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    border-radius: 4pt;
+
 }
 
+.open .card{
+}
+
+.card:hover{
+    border-color: #00000007;
+}
 
 
 footer{
@@ -77,7 +102,7 @@ footer{
 
 
 h2{
-    margin-bottom: 6pt;
+    margin-bottom: 20pt;
 }
 
 h3{
@@ -90,7 +115,12 @@ h4{
     font-weight: 500;
 }
 p{
-    margin-bottom: 6pt;
+    margin-bottom: 8pt;
+    line-height: 22pt;
+}
+span.sudoh4{
+    opacity: 0.5;
+    font-weight: 500;
 }
 
 /* inline styles */
