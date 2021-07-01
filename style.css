@@ -1,19 +1,32 @@
 /* setup */
+:root {
+    --colorBg: #ffffff;
+    --colorBorder: #F1F2F5;
+    --colorAccent: rgba(255, 46, 0, 1);
+    --color1: #585757; /* Text main */
+    --color2: #68686e; /* P */
+    --color3: #a1a5b1; 
+    --color4: #F1F2F5;
+
+    --svgColorFilter: invert(39%) sepia(71%) saturate(7493%) hue-rotate(1deg) brightness(101%) contrast(106%);
+}
+
 * {
     margin: 0;
-    font-size: 16pt;
+    font-size: 15pt;
     outline: none;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, helvetica, arial, sans-serif;
+    font-family: "Public Sans", sans-serif;
+    font-weight:550;
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color:rgba(0, 0, 0, 0.8);
+    color: var(--color1);
 }
 
-:root {
-}  
+
+
 
 
 /* structure */
@@ -23,11 +36,11 @@ body{
 }
 
 #menu{
-    padding: 20pt 0 10pt 0;
-    border-bottom: #eeeeee solid 1pt;
+    padding: 30pt 0 15pt 0;
+    border-bottom: var(--colorBorder) solid 1pt;
     position: fixed;
     top:0;
-    background-color: white;
+    background-color: var(--colorBg);
     width: 100%;
     z-index: 30;
 }
@@ -51,17 +64,21 @@ section{
     padding: 30pt 0 10pt 0;
     width:100%;
     overflow:hidden;
-    max-height:400pt;
-    transition: max-height 1s cubic-bezier(0.68, -0.2, 0.32, 1.2);
-}
-section:hover{
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.01);
+    max-height:350pt;
+    transition: all 1s cubic-bezier(0.68, -0.2, 0.32, 1.2);
+    transition-property: box-shadow, max-height;
+    box-shadow:inset 0px 30px 11px -35px rgba(0,0,0,0.04); /* if performance issues look into this? */
 }
 
 section.open{
     max-height:2000pt;
+    box-shadow:inset 0px 30px 11px -20px rgba(0,0,0,0.04);
+    transition-property:  max-height;
+
 }
+
+
+/* CARDS AND SCROLL CONTAINERS */
 
 .scrollContainer{
     margin-bottom:20pt;
@@ -70,11 +87,11 @@ section.open{
 
 
 .card{
-    margin-left: -17pt;
-    margin-right: 30pt;
-    padding: 20pt 15pt 15pt 15pt;
+    margin-left: -15pt;
+    margin-right: 35pt;
+    padding: 20pt 20pt 15pt 15pt;
     min-width:290pt;
-    border:solid 2pt;
+    border: solid 1pt;
     border-color: #00000000;
     transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     border-radius: 4pt;
@@ -85,9 +102,71 @@ section.open{
 }
 
 .card:hover{
-    border-color: #00000007;
+    border-color: var(--colorBorder);
 }
 
+
+
+
+/* HEADINGS AND FILTERS */
+
+.heading{
+    margin-bottom: 20pt;
+    
+}
+
+.chevron{
+    padding: 7pt 12pt 10pt 12pt;
+    border-radius: 6pt;
+    margin-right: 30pt;
+    margin-left: -5pt;
+    border: 1px solid var(--colorBorder);
+    cursor: pointer;
+}
+
+.chevron:hover{
+    border: 1px solid var(--colorAccent);
+}
+
+
+.chevron svg{
+    filter: var(--svgColorFilter);
+    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    transform: rotate(0deg);
+}
+
+.open .chevron svg{
+    transform: rotate(180deg);
+}
+
+.filters{
+    flex-grow: 1;
+    display: flex;
+    overflow: scroll;
+    flex-direction: row-reverse;
+    margin:0 30pt;
+}
+
+.filter{
+    font-weight: 400;
+    margin-left: 10pt;
+    color: var(--color3);
+    padding: 8pt 15pt;
+    border-radius: 6pt;
+    border: 1px solid var(--colorBg);
+    user-select:none;
+}
+
+.filter:hover{
+    color: var(--color2);
+    border: 1px solid var(--color4);
+    cursor: pointer;
+}
+
+.filter.active{
+    color: var(--colorAccent);
+    border: 1px solid var(--color4);
+}
 
 footer{
     width: 100%;
@@ -96,32 +175,45 @@ footer{
 }
 
 
-
+/* ------------------------------------- */
+/* text */
 
 /* styling */
 
-
-h2{
-    margin-bottom: 20pt;
+h2, h1{
+    font-weight:600;
+    align-self: flex-end;
+    margin-bottom: 10pt;
+    color:var(--color1);
+    letter-spacing: 10;
 }
 
 h3{
-    margin-bottom: 6pt;
+    margin-bottom: 5pt;
+    font-weight:600;
+    align-self: flex-end;
+    color:var(--color1);
 }
 
 h4{
-    margin-bottom: 25pt;
-    opacity: 0.5;
-    font-weight: 500;
+    margin-bottom: 30pt;
+    font-weight:400;
+    color:var(--color3);
 }
+
 p{
-    margin-bottom: 8pt;
-    line-height: 22pt;
+    margin-bottom: 5pt;
+    line-height: 20pt;
+    font-size: 14pt;
+    font-weight: 400;
+    color: var(--color2);
 }
+
 span.sudoh4{
     opacity: 0.5;
-    font-weight: 500;
+    font-weight: 400;
 }
+
 
 /* inline styles */
 span.highlight{
@@ -145,6 +237,13 @@ span.code{
 
 
 
+/* 🌖  dark mode */
+@media (prefers-color-scheme: dark) {
+
+}
+
+
+
 
 /*      */
 /* MISC */
@@ -154,36 +253,4 @@ html, body {
     overscroll-behavior-x: none;
 }
 
-/* Chevron SVG icon */
 
-#chevron {
-    position: relative;
-    text-align: center;
-    padding: 0;
-    margin-bottom: 0;
-    height: 10pt;
-    width: 30pt;
-    display: inline-block;
-  }
-
-#chevron:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 51%;
-    background: red;
-    transform: skew(0deg, 28deg);
-  }
-
-#chevron:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 50%;
-    background: red;
-    transform: skew(0deg, -28deg);
-}
