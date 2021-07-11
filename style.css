@@ -3,10 +3,13 @@
     --colorBg: #ffffff;
     --colorBorder: #F1F2F5;
     --colorAccent: rgba(255, 46, 0, 1);
+    --colorAccent2: #c76955;
+    --colorAccent3: rgba(255, 46, 0, 0.05);
     --color1: #585757; /* Text main */
     --color2: #68686e; /* P */
     --color3: #a1a5b1; 
     --color4: #F1F2F5;
+    --color5: #f9f9f9;
 
     --svgColorFilter: invert(39%) sepia(71%) saturate(7493%) hue-rotate(1deg) brightness(101%) contrast(106%);
 }
@@ -61,12 +64,14 @@ around parent elements for spacing */
 
 section{
     border-bottom: #eeeeee 1pt solid;
-    padding: 30pt 0 10pt 0;
+    padding: 0 0 10pt 0;
     width:100%;
+    cursor:pointer;
     overflow:hidden;
-    max-height:350pt;
+    max-height:300pt;
     transition: all 1s cubic-bezier(0.68, -0.2, 0.32, 1.2);
     transition-property: box-shadow, max-height;
+    position: relative;
     box-shadow:inset 0px 30px 11px -35px rgba(0,0,0,0.04); /* if performance issues look into this? */
 }
 
@@ -74,6 +79,7 @@ section.open{
     max-height:2000pt;
     box-shadow:inset 0px 30px 11px -20px rgba(0,0,0,0.04);
     transition-property:  max-height;
+    cursor:inherit;
 
 }
 
@@ -95,6 +101,8 @@ section.open{
     border-color: #00000000;
     transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     border-radius: 4pt;
+    cursor:pointer;
+
 
 }
 
@@ -105,14 +113,48 @@ section.open{
     border-color: var(--colorBorder);
 }
 
+.fadeHoriz{
+    position: absolute;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 100%);
+    height: 20%;
+    width: 100%;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 2s;
+    bottom: 0;
+}
 
+.fadeVert{
+    position: absolute;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+    height: 100%;
+    width: 5%;    
+    opacity: 1;
+    transition: opacity 2s;
+    top: 0;
+    right: 0;
+}
+
+
+
+.open .fadeHoriz, .open .fadeVert {
+    opacity:0;
+}
 
 
 /* HEADINGS AND FILTERS */
 
 .heading{
+    padding-top:30pt;
     margin-bottom: 20pt;
-    
+    position: relative;
+    z-index:20;
+}
+
+.title {  
+    display: flex;
+    flex-grow: 2;
+    cursor: pointer;
 }
 
 .chevron{
@@ -124,10 +166,13 @@ section.open{
     cursor: pointer;
 }
 
-.chevron:hover{
+.chevron:hover, .title:hover .chevron{
     border: 1px solid var(--colorAccent);
 }
 
+.chevron:active, .title:active .chevron{
+    filter: brightness(0.8);
+}
 
 .chevron svg{
     filter: var(--svgColorFilter);
@@ -140,32 +185,36 @@ section.open{
 }
 
 .filters{
-    flex-grow: 1;
+    flex-grow: 0;
     display: flex;
     overflow: scroll;
     flex-direction: row-reverse;
-    margin:0 30pt;
+    margin: 0 30pt 0 auto;
 }
-
-.filter{
+.filters .filter{
     font-weight: 400;
-    margin-left: 10pt;
     color: var(--color3);
+    margin-left:8pt;
     padding: 8pt 15pt;
     border-radius: 6pt;
-    border: 1px solid var(--colorBg);
+    border: 1px solid;
+    border-color: var(--colorBg);
     user-select:none;
+}
+h4 .filter{
+    border-bottom: 1px solid var(--colorBg);
+    padding-bottom:4pt;
 }
 
 .filter:hover{
+    border-color:var(--color4);
     color: var(--color2);
-    border: 1px solid var(--color4);
     cursor: pointer;
 }
 
 .filter.active{
     color: var(--colorAccent);
-    border: 1px solid var(--color4);
+    border-color:var(--colorBorder);
 }
 
 footer{
@@ -195,18 +244,19 @@ h3{
     color:var(--color1);
 }
 
-h4{
+h4, h4 a{
     margin-bottom: 30pt;
     font-weight:400;
     color:var(--color3);
 }
 
 p{
-    margin-bottom: 5pt;
+    margin-bottom: 10pt;
     line-height: 20pt;
     font-size: 14pt;
     font-weight: 400;
     color: var(--color2);
+    cursor:text;
 }
 
 span.sudoh4{
@@ -216,23 +266,26 @@ span.sudoh4{
 
 
 /* inline styles */
+span.highlight, span.code{
+    display: inline-block;
+    margin-left: -5pt;
+    color: var(--color2);
+    padding: 1pt 6pt 3pt 6pt;
+}
+
 span.highlight{
-    background:rgba(255, 255, 141, 0.249);
-    font-weight:500;
-    color: rgb(60 60 60);
-    margin-left: -3pt;
-    border-radius: 5pt;
-    padding: 0 3pt 3pt 3pt;
+    background: var(--colorAccent3);
+    color:var(--colorAccent2);
+    font-size: 14pt;
+    font-weight: 400;
 }
 
 span.code{
     font-family: monospace;
-    font-weight: 700;
-    margin-left: -3pt;
-    color: #594bba;
-    background: #54545415;
-    border-radius: 5pt;
-    padding: 0 3pt 3pt 3pt;
+    font-weight: 500;
+    font-size: 14pt;
+    background: var(--color5);
+    border-radius: 4pt;
 }
 
 

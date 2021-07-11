@@ -12,8 +12,8 @@ const content = {
         html = {
             title: "Html things I didn't know",
             id:"html",
-            category: "Frontend",
-            subCategory: "HTML",
+            categories: ["Frontend"],
+            subcategories: "HTML",
             content: [
             `Always put ${c} <!doctype html> ${cc} at the top of the html doc to avaoid quirks mode`,
             `${c} <meta charset="utf-8"> ${cc}`]
@@ -21,8 +21,8 @@ const content = {
         cssBoilerplate = {
             title: "Css Boilerplate",
             id:"cssBoilerplate",
-            category: "Frontend",
-            subCategory: "CSS",
+            categories: ["Frontend"],
+            subcategories: "CSS",
             content: [`${c}margin: 0;${cc}`,
                 `${c}outline: none;${cc}`,  
                 `${c}padding: 0;${cc}`,  
@@ -36,8 +36,8 @@ const content = {
         terminalBasicNav = {
             title: "Terminal - Basic Navigation",
             id:"terminalBasicNav",
-            category: "Backend",
-            subCategory: "Terminal",
+            categories: ["Backend"],
+            subcategories: "Terminal",
             content: [
             `${c}PWD${cc} - Where am I?`,
             `${c}CD${cc} - change directory`,
@@ -68,8 +68,8 @@ const content = {
         terminalKeyboardShortcuts = {
             title: "Terminal - Basic Navigation",
             id:"terminalKeyboardShortcuts",
-            category: "Backend",
-            subCategory: "Terminal",
+            categories: ["Backend"],
+            subcategories: "Terminal",
             content: [
                 `${h}TAB key${hh} - finishes off whatever you are typing, can work on multiple folders`,
                 `${h}Option key${hh} - move insertion point with mouse`],
@@ -78,8 +78,8 @@ const content = {
         git = {
             title: "Git terminal",
             id:"gitTerminal",
-            category: "Backend",
-            subCategory: "Terminal",
+            categories: ["Backend"],
+            subcategories: "Terminal",
             content: [
                 `${c} git add${cc} - add docs to the git`,
                 `${c} git commit${cc} - create a version of your work`,
@@ -92,8 +92,8 @@ const content = {
         jsBasic = {
             title: "Javascript- Things I didn't know ",
             id:"jsBestPractice",
-            category: "Frontend",
-            subCategory: "Javascript",
+            categories: ["Frontend"],
+            subcategories: "Javascript",
             content: [
             c + "`The result is ${variable + 10} `" + cc + "- Backticks are better concatonation",
             `${c}function(age=23, date = 'november', height)${cc} - default params. can also accept funcitons`,
@@ -114,8 +114,8 @@ const content = {
         html = {
             title: "Html things I didn't know",
             id:"html",
-            category: "Frontend",
-            subCategory: "HTML",
+            categories: ["Tag a"],
+            subcategories: "HTML",
             content: [
             `Always put ${c} <!doctype html> ${cc} at the top of the html doc to avaoid quirks mode`,
             `${c} <meta charset="utf-8"> ${cc}`]
@@ -123,8 +123,8 @@ const content = {
         cssBoilerplate = {
             title: "Css Boilerplate",
             id:"cssBoilerplate",
-            category: "Frontend",
-            subCategory: "CSS",
+            categories: ["Tag a"],
+            subcategories: "CSS",
             content: [`${c}margin: 0;${cc}`,
                 `${c}outline: none;${cc}`,  
                 `${c}padding: 0;${cc}`,  
@@ -138,8 +138,8 @@ const content = {
         terminalBasicNav = {
             title: "Terminal - Basic Navigation",
             id:"terminalBasicNav",
-            category: "Backend",
-            subCategory: "Terminal",
+            categories: ["Tag b"],
+            subcategories: "Terminal",
             content: [
             `${c}PWD${cc} - Where am I?`,
             `${c}CD${cc} - change directory`,
@@ -170,8 +170,8 @@ const content = {
         terminalKeyboardShortcuts = {
             title: "Terminal - Basic Navigation",
             id:"terminalKeyboardShortcuts",
-            category: "Backend",
-            subCategory: "Terminal",
+            categories: ["Tag c"],
+            subcategories: "Terminal",
             content: [
                 `${h}TAB key${hh} - finishes off whatever you are typing, can work on multiple folders`,
                 `${h}Option key${hh} - move insertion point with mouse`],
@@ -180,8 +180,8 @@ const content = {
         git = {
             title: "Git terminal",
             id:"gitTerminal",
-            category: "Backend",
-            subCategory: "Terminal",
+            categories: ["Tag a"],
+            subcategories: "Terminal",
             content: [
                 `${c} git add${cc} - add docs to the git`,
                 `${c} git commit${cc} - create a version of your work`,
@@ -194,8 +194,8 @@ const content = {
         jsBasic = {
             title: "Javascript- Things I didn't know ",
             id:"jsBestPractice",
-            category: "Frontend",
-            subCategory: "Javascript",
+            categories: ["Frontend"],
+            subcategories: "Javascript",
             content: [
             c + "`The result is ${variable + 10} `" + cc + "- Backticks are better concatonation",
             `${c}function(age=23, date = 'november', height)${cc} - default params. can also accept funcitons`,
@@ -216,6 +216,10 @@ const content = {
         airBnbJs = {
             title: "Airbnb Guide to JS",
             link: "https://github.com/airbnb/javascript",
+            content: [
+            `${h}Lorem Ipsum is simply dummy text of the printing and typesetting industry.${hh} Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.`,
+            `It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
+            ]
         }
 
     ]
