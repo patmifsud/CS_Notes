@@ -115,8 +115,9 @@ section.open{
 
 .fadeHoriz{
     position: absolute;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 100%);
-    height: 20%;
+    pointer-events: none;
+    background: linear-gradient( 180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
+    height: 40%;
     width: 100%;
     z-index: 10;
     opacity: 1;
@@ -125,6 +126,7 @@ section.open{
 }
 
 .fadeVert{
+    pointer-events: none;
     position: absolute;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
     height: 100%;
@@ -203,6 +205,7 @@ section.open{
 }
 h4 .filter{
     border-bottom: 1px solid var(--colorBg);
+    margin-right:15pt;
     padding-bottom:4pt;
 }
 
