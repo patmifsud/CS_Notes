@@ -7,7 +7,6 @@ const hh = '</span>';
 
 
 const content = {
-
     terminal : [
         terminalKeyboardShortcuts = {
             title: "Terminal - Keyboard shortcuts",
@@ -22,7 +21,7 @@ const content = {
         terminalBasicNav = {
             title: "Terminal - Basic Navigation",
             id:"terminalBasicNav",
-            categories: ["Nav"],
+            categories: ["File system"],
             content: [
             `${c}PWD${cc} - Where am I?`,
             `${c}CD${cc} - change directory`,
@@ -42,7 +41,7 @@ const content = {
         terminalCreation = {
             title: "Terminal - Creating and removing files",
             id:"terminalCreatingFiles",
-            categories: ["Make file", "Delete", "Directories"],
+            categories: ["File system"],
             content: [
             `${c}mkdir${cc} - make directory`,
             `${c}touch${cc} (name), (name) - make a file or two`,
@@ -60,7 +59,7 @@ const content = {
         git = {
             title: "Git terminal",
             id:"gitTerminal",
-            categories: ["Git"],
+            categories: ["Git", "File system"],
             content: [
                 `${c} git add${cc} - add docs to the git`,
                 `${c} git commit${cc} - create a version of your work`,
@@ -70,6 +69,32 @@ const content = {
             ]
         }
 
+    ],
+    vanillaJavascript : [
+        ternaryTemplateLit = {
+            title: "Template literals and ternary operators",
+            id:"ternaryTemplateLit",
+            categories: ["Language"],
+            content: [
+            `${c}&&${cc} 'and' logical operator 1> 0 && -1 > 0 = true`,
+            `${c}||${cc} 'or' logical operator 1> 0 || 0 > 0 = true`,
+            `${c}|${cc} 'not' logical operator 1 + 1 | 1 + 0 = true`,
+            ]
+        },
+        usefulLinks = {
+            title: "Useful links",
+            id:"usefulLinks",
+            categories: ["Language"],
+            content: [
+            `${h}AirBnb Guide to JS${hh} https://github.com/airbnb/javascript`
+            ]
+        },
+        iteration = {
+            title: "Iteration",
+            id:"iteration",
+            categories: ["Language"],
+            content: []
+        },
     ],
 
     ruby : [
@@ -82,31 +107,6 @@ const content = {
         },
     ],
 
-    vanillaJavascript : [
-        loops = {
-            title: "Loops",
-            id:"loops",
-            categories: ["loops"],
-            content: []
-        },
-        ternaryTemplateLit = {
-            title: "Template literals and ternary operators",
-            id:"ternaryTemplateLit",
-            categories: ["Template literals", "Ternary operators"],
-            content: [
-            `${c}&&${cc} 'and' logical operator 1> 0 && -1 > 0 = true`,
-            `${c}||${cc} 'or' logical operator 1> 0 || 0 > 0 = true`,
-            `${c}|${cc} 'not' logical operator 1 + 1 | 1 + 0 = true`,
-            ]
-        },
-        usefulLinks = {
-            title: "Useful links",
-            id:"usefulLinks",
-            categories: ["formatting"],
-            content: [
-            `${h}AirBnb Guide to JS${hh} https://github.com/airbnb/javascript`
-            ]
-        }
-    ],
+    
 
 }
