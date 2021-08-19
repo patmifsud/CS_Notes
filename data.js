@@ -19,6 +19,7 @@ const content = {
             `${c}rails console${cc} open up the console while server isn't running`,
             `${c}sqlite3 development.sqlite3 < FILENAME.sql${cc} make a database from an SQL file`,
             `${c}rails db:create${cc} get the DB into rails`,
+            `${c}rails db:migrate${cc} migrate the db`,
             `${c}bundle install${cc} if you've added gems, run this to install them`,
             ]
         },
@@ -47,6 +48,18 @@ const content = {
             `${c}<form action="/result">${cc} - form to direct user towards a page on submittion`,
             `${c}$global_variable${cc} - ${c}@instance_variable${cc}`,
             `${c};${cc} for pry specifically, will return it silently to the console`,
+            ]
+        },
+        heroku = {
+            title: "Heroku",
+            id:"heroku",
+            categories: ["hosting"],
+            content: [
+                `${c}git push heroku main${cc}`,
+                `${c}heroku run rails db:migrate${cc}`,
+                `${c}heroku run rails db:seed${cc}`,
+                `${c}heroku pg:psql${cc} open up the database in heroku
+                `,
             ]
         },
         sinatra = {
@@ -168,6 +181,7 @@ const content = {
                 `${h}TAB key${hh} - finishes off whatever you are typing, can work on multiple folders`,
                 `${h}Option key${hh} - move insertion point with mouse`,
                 `${h}Contol - L${hh} - clear terminal`,
+                `${h}Shift + G${hh} - jump to the end of a scrolling section`,
 
             ]
         },
@@ -190,7 +204,7 @@ const content = {
             `${c}open${cc} - opens the thing in finder/mac os`,
             `${c}open .${cc} - opens the current directory`,
             `${c}cat${cc} - short for concatonate, opens something`,
-            `${c}/${cc} - jump to the top of the directory and go to a folder in there`
+            `${c}/${cc} - jump to the top of the directory and go to a folder in there`,
             ]
         },
         terminalCreation = {
